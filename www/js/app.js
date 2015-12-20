@@ -64,10 +64,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngCordova'])
         }
       }
     })
-    .state('groupEntries', {
-      url: '/groupEntries',
+    .state('tab.groupEntries', {
+      url: '/groupEntries/:groupId',
       views: {
-        'groupEntries': {
+        'tab-myGroups': {
           templateUrl: 'templates/groupEntries.html',
           controller: 'GroupEntriesCtrl'
         }

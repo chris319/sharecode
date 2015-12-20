@@ -1,13 +1,14 @@
 <ion-view title="My Groups">
     <ion-content padding="true" class="has-header">
       <ion-slide-box>
-        <ion-slide ng-repeat="group in groups" href="#/groupEntries">
-               <ion-nav-view name="groupEntries"></ion-nav-view>
+        <ion-slide ng-repeat="group in groups" >
+            <a href="#/tab/groupEntries/{{group.uid}}">
              <div>
                 <h3>{{group.title}}</h3>
                 <img src="http://schlagmich.net:8080/api/v1/qrcode?data={{group.uid}}" alt="img">
                 <p>{{group.description}}</p>
               </div>
+            </a>
         </ion-slide>
       </ion-slide-box>
     </ion-content>

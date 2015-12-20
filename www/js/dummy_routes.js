@@ -7,47 +7,47 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-      
+
+
     .state('tabsController', {
       url: '/page1',
       abstract:true,
       templateUrl: 'templates/tabsController.html'
     })
-      
-    
-      
-        
+
+
+
+
     .state('login', {
       url: '/page5',
       templateUrl: 'templates/login.html',
       controller: 'loginCtrl'
     })
-        
-      
-    
-      
-        
+
+
+
+
+
     .state('signup', {
       url: '/page6',
       templateUrl: 'templates/signup.html',
       controller: 'signupCtrl'
     })
-        
-      
-    
-      
-        
+
+
+
+
+
     .state('groupEntries', {
-      url: '/groupEntries',
+      url: '/groupEntries/:groupId',
       templateUrl: 'templates/groupEntries.html',
       controller: 'groupEntriesCtrl'
     })
-        
-      
-    
-      
-        
+
+
+
+
+
     .state('tabsController.myGroups', {
       url: '/index',
       views: {
@@ -57,11 +57,11 @@ angular.module('app.routes', [])
         }
       }
     })
-        
-      
-    
-      
-        
+
+
+
+
+
     .state('tabsController.addGroup', {
       url: '/addGroup',
       views: {
@@ -71,11 +71,11 @@ angular.module('app.routes', [])
         }
       }
     })
-        
-      
-    
-      
-        
+
+
+
+
+
     .state('tabsController.myAccount', {
       url: '/account',
       views: {
@@ -85,8 +85,8 @@ angular.module('app.routes', [])
         }
       }
     })
-        
-      
+
+
     ;
 
   // if none of the above states are matched, use this as the fallback
