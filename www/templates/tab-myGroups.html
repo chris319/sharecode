@@ -1,0 +1,14 @@
+<ion-view title="My Groups">
+    <ion-content padding="true" class="has-header">
+      <ion-slide-box>
+        <ion-slide ng-repeat="group in groups">
+          <div>
+              <img class="scale-hover" src="http://schlagmich.net:8080/api/v1/qrcode?data=3453453455" alt="img">
+              <h3>{{group.title}}</h3>
+              <em>Owner: {{group.author}}</em>
+              <p>{{group.description}}</p>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </ion-content>
+</ion-view>
