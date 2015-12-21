@@ -69,7 +69,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngCordova'])
       views: {
         'tab-myGroups': {
           templateUrl: 'templates/groupEntries.html',
-          controller: 'GroupEntriesCtrl'
+          controller: 'GroupEntriesCtrl',
+          resolve: {
+            groupEntries:
+              function($http, $stateParams) {
+              return $http.get('http://schlagmich.net:8080/api/v1/entries/'+$stateParams.groupId);
+            }
+          }
         }
       }
     })

@@ -8,8 +8,8 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('GroupEntriesCtrl', function($scope) {
-
+.controller('GroupEntriesCtrl', function($scope, groupEntries) {
+  $scope.groupEntries = groupEntries.data._embedded.groupEntryResourceList;
 })
 
 .controller('AddGroupCtrl', function($scope) {
