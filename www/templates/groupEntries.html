@@ -1,6 +1,11 @@
 <ion-view title="Group Entries">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <ion-list class="list">
+            <a class="item item-avatar" href="#">
+              <img src="venkman.jpg">
+              <h2>Venkman</h2>
+              <p>Back off, man. I'm a scientist.</p>
+            </a>
             <ion-item ng-repeat="entry in groupEntries">{{entry.message}}</ion-item>
         </ion-list>
     </ion-content>
