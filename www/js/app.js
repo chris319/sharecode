@@ -49,7 +49,8 @@ angular.module('app', ['ionic', 'ionic-material', 'app.controllers', 'app.servic
         resolve: {
           groupList:
             function($http) {
-            return $http.get('http://schlagmich.net:8080/api/v1/subscriptions/0d492660-a10e-11e5-8eda-73e5ccce3d45');
+            //return $http.get('http://schlagmich.net:8080/api/v2/getmygroups/cc841870-e3ab-11e5-b906-6b16f81a88d0'); //chris
+            return $http.get('http://schlagmich.net:8080/api/v2/getmygroups/cc8a0be0-e3ab-11e5-b906-6b16f81a88d0'); //ralf
           }
         }
       }
@@ -73,7 +74,7 @@ angular.module('app', ['ionic', 'ionic-material', 'app.controllers', 'app.servic
           resolve: {
             groupEntries:
               function($http, $stateParams) {
-              return $http.get('http://schlagmich.net:8080/api/v1/entries/'+$stateParams.groupId);
+              return $http.get('http://schlagmich.net:8080/api/v2/getgroupdetails/'+$stateParams.groupId);
             }
           }
         }

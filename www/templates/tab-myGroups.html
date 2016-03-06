@@ -2,16 +2,15 @@
     <ion-content padding="true" class="has-header">
       <ion-slide-box>
         <ion-slide ng-repeat="group in groups" >
-          <a href="#/tab/groupEntries/{{group.uid}}">
+          <a href="#/tab/groupEntries/{{group.groupid}}">
             <div class="list card">
               <div class="item item-avatar">
-                <img src="/img/apple.png">
+                <img src="{{group.logoUrl}}">
                 <h2>{{group.title}}</h2>
-                <p>Author</p>
+                <p>{{group.creatorName}}</p>
               </div>
-
               <div class="item item-body">
-                <img class="item item-image" src="http://schlagmich.net:8080/api/v1/qrcode?data={{group.uid}}" width="80%" style="border-radius: 5%;">
+                <img class="item item-image" src="{{group.qrCodeUrl}}" width="80%" style="border-radius: 5%;">
                 <p>
                   {{group.description}}
                 </p>
@@ -19,14 +18,14 @@
                   <a class="item item-icon-left" href="#">
                     <i class="icon ion-person-stalker"></i>
                     Subscribers
-                    <span class="badge badge-assertive">3</span>
+                    <span class="badge badge-assertive">{{group.members}}</span>
                   </a>
                   <a class="item item-icon-left" href="#">
                     <i class="icon ion-person-stalker"></i>
                     Postings
-                    <span class="badge badge-assertive">5</span>
+                    <span class="badge badge-assertive">{{group.feedCount}}</span>
                   </a>
-                  <p>Last share:</p>
+                  <p>Last share from {{group.groupFeed[0].userName}}: {{group.groupFeed[0].shareText}}</p>
                 </p>
               </div>
             </div>

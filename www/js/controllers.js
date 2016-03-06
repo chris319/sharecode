@@ -9,7 +9,8 @@ angular.module('app.controllers', [])
 })
 
 .controller('GroupEntriesCtrl', function($scope, groupEntries) {
-  $scope.groupEntries = groupEntries.data._embedded.groupEntryResourceList;
+  //$scope.groupEntries = groupEntries.data._embedded.groupEntryResourceList;
+  $scope.groupEntries = groupEntries.data;
 })
 
 .controller('AddGroupCtrl', function($scope) {
@@ -33,10 +34,11 @@ angular.module('app.controllers', [])
     };
 
 })
-
 .controller('MyGroupsCtrl', function($scope, $state, $ionicSlideBoxDelegate, groupList) {
 
-  $scope.groups = groupList.data._embedded.groupResourceList;
+
+  //$scope.groups = groupList.data._embedded.groupResourceList;
+  $scope.groups = groupList.data;
 
 /*
 $scope.groups =
