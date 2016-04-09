@@ -15,6 +15,10 @@ angular.module('app.controllers', [])
 
 .controller('AddGroupCtrl', function($scope) {
 
+  $scope.createGroup = function() {
+      
+  };
+
 })
 
 .controller('MyAccountCtrl', function($scope) {

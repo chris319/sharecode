@@ -1,5 +1,56 @@
 <ion-view title="Add Group">
     <ion-content padding="true" class="has-header" ng-controller="ExampleController">
-      <button class="button" ng-click="scanBarcode()">Scan</button>
+      <form name="loginForm" ng-submit="$scope.login($scope.user);" novalidate>
+        <div class="list">
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Title</span>
+            <input type="text" placeholder="Title" ng-model="group.title">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Description</span>
+            <input type="text" placeholder="Description" ng-model="group.description">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Email</span>
+            <input type="text" placeholder="Email" ng-model="group.email">
+          </label>
+        </div>
+        <div class="list">
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Template
+            </div>
+            <select ng-model="group.template">
+              <option selected>Networking</option>
+              <option>Meet-ups</option>
+              <option>Chit-Chat</option>
+            </select>
+          </label>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Invitation Mode
+            </div>
+            <select ng-model="group.invitation">
+              <option selected>Founder only</option>
+              <option>1st grade</option>
+              <option>2nd grade</option>
+              <option>3rd grade</option>
+              <option>Everyone</option>
+            </select>
+          </label>
+        </div>
+          <ul class="list">
+            <li class="item item-toggle">
+               Private
+               <label class="toggle toggle-assertive">
+                 <input type="checkbox" ng-model="group.private">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </li>
+          </ul>
+        <button class="button" ng-click="createGroup()">Create group</button>
+      </form>
     </ion-content>
 </ion-view>
